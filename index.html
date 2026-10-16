@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Date With You ❤️</title>
+<style>
+  :root{
+    --rose:#c94f63;
+    --deep:#4b252c;
+    --cream:#fff8f5;
+    --pink:#f8dfe3;
+    --white:#ffffff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family: Georgia, "Times New Roman", serif;
+    background:var(--cream);
+    color:var(--deep);
+    overflow-x:hidden;
+  }
+  .page{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:60px 20px;
+    position:relative;
+  }
+  .hero{
+    text-align:center;
+    background:
+      linear-gradient(rgba(75,37,44,.35),rgba(75,37,44,.45)),
+      url("photo1.jpg") center/cover no-repeat;
+    color:white;
+  }
+  .hero-card{
+    max-width:850px;
+    padding:50px 28px;
+  }
+  .eyebrow{letter-spacing:4px;text-transform:uppercase;font-size:.8rem;margin-bottom:20px}
+  h1{font-size:clamp(3rem,9vw,6.8rem);line-height:.95;margin-bottom:24px}
+  h2{font-size:clamp(2.2rem,6vw,4.5rem);margin-bottom:25px}
+  h3{font-size:1.5rem;margin:18px 0 10px}
+  p{font-family:Arial,sans-serif;line-height:1.8;font-size:1.05rem}
+  .subtitle{font-size:1.25rem;max-width:650px;margin:0 auto 32px}
+  .btn{
+    display:inline-block;
+    border:0;
+    background:var(--rose);
+    color:white;
+    padding:15px 28px;
+    border-radius:999px;
+    font-family:Arial,sans-serif;
+    font-weight:bold;
+    text-decoration:none;
+    cursor:pointer;
+    transition:.25s;
+    box-shadow:0 8px 24px rgba(201,79,99,.25);
+  }
+  .btn:hover{transform:translateY(-3px);filter:brightness(1.05)}
+  .btn.alt{background:white;color:var(--rose)}
+  .soft{background:var(--pink)}
+  .content{max-width:1000px;width:100%;text-align:center}
+  .message{max-width:760px;margin:0 auto 35px}
+  .gallery{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+    margin-top:30px;
+  }
+  .gallery img,.memory img,.final-photo{
+    width:100%;height:260px;object-fit:cover;border-radius:20px;
+    box-shadow:0 10px 30px rgba(75,37,44,.12);
+  }
+  .memory-grid{
+    display:grid;grid-template-columns:repeat(2,1fr);gap:25px;margin-top:35px;
+  }
+  .memory{
+    background:white;padding:14px;border-radius:24px;box-shadow:0 10px 35px rgba(75,37,44,.09);
+  }
+  .memory img{height:320px}
+  .date-card{
+    background:white;max-width:650px;margin:30px auto;padding:35px;border-radius:30px;
+    box-shadow:0 15px 50px rgba(75,37,44,.12);
+  }
+  .date-item{padding:16px;border-bottom:1px solid #f0dfe2;font-family:Arial,sans-serif}
+  .date-item:last-child{border-bottom:0}
+  .date-item strong{display:block;color:var(--rose);font-size:.8rem;letter-spacing:2px;margin-bottom:6px}
+  .question{background:#fff}
+  .question h2{font-size:clamp(2.5rem,7vw,5rem)}
+  .buttons{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:30px}
+  .celebrate{
+    background:
+      radial-gradient(circle at 20% 20%,#fff 0 3px,transparent 4px),
+      radial-gradient(circle at 80% 30%,#fff 0 3px,transparent 4px),
+      linear-gradient(135deg,#c94f63,#8d3347);
+    background-size:120px 120px,160px 160px,100% 100%;
+    color:white;
+  }
+  .celebrate .btn{background:white;color:var(--rose)}
+  .final-photo{max-width:650px;height:420px;margin:25px auto;display:block}
+  .small{font-size:.9rem;opacity:.8;margin-top:25px}
+  footer{text-align:center;padding:30px;font-family:Arial,sans-serif;font-size:.85rem;background:#fff}
+  .heart{
+    position:fixed;bottom:-30px;pointer-events:none;animation:float 7s linear forwards;
+    z-index:10;font-size:20px;
+  }
+  @keyframes float{
+    0%{transform:translateY(0) rotate(0);opacity:0}
+    10%{opacity:.8}
+    100%{transform:translateY(-110vh) rotate(360deg);opacity:0}
+  }
+  .hidden{display:none!important}
+  .secret{
+    margin-top:25px;padding:22px;background:#fff;border-radius:20px;
+    font-style:italic;box-shadow:0 8px 25px rgba(75,37,44,.08);
+  }
+  @media(max-width:700px){
+    .gallery,.memory-grid{grid-template-columns:1fr}
+    .gallery img{height:300px}
+    .memory img{height:360px}
+    .page{padding:45px 16px}
+    .hero-card{padding:35px 18px}
+  }
+</style>
+</head>
+<body>
+
+<section class="page hero" id="home">
+  <div class="hero-card">
+    <div class="eyebrow">A little something for you</div>
+    <h1>Hey, Beautiful ❤️</h1>
+    <p class="subtitle">I have a very important question for you...</p>
+    <a class="btn" href="#message">CLICK TO FIND OUT 💌</a>
+    <p class="small">P.S. You might want to smile before continuing. 😉</p>
+  </div>
+</section>
+
+<section class="page" id="message">
+  <div class="content">
+    <h2>It's You. ❤️</h2>
+    <div class="message">
+      <p>
+        There are so many things I could say about you...
+        You're the person who makes ordinary moments feel special.
+        The person I want to share random conversations with.
+        The person I want beside me for the big moments — and the little ones too.
+      </p>
+      <br>
+      <p>
+        And today, I don't want to write a long speech.
+        I just want to ask you something simple. ❤️
+      </p>
+    </div>
+    <div class="gallery">
+      <img src="photo2.jpg" alt="Our memory 1">
+      <img src="photo3.jpg" alt="Our memory 2">
+      <img src="photo4.jpg" alt="Our memory 3">
+    </div>
+    <br>
+    <p><strong>Some of my favorite memories have you in them. 🥰</strong></p>
+    <br>
+    <a class="btn" href="#memories">THERE'S MORE... ❤️</a>
+  </div>
+</section>
+
+<section class="page soft" id="memories">
+  <div class="content">
+    <h2>A Few Moments I Never Want to Forget</h2>
+    <p class="message">Because somehow, even the simplest moments with you become memories I want to keep forever.</p>
+
+    <div class="memory-grid">
+      <div class="memory">
+        <img src="photo5.jpg" alt="Favorite memory">
+        <h3>That smile... ❤️</h3>
+        <p>One of the many reasons I fell for you.</p>
+      </div>
+      <div class="memory">
+        <img src="photo6.jpg" alt="Favorite memory">
+        <h3>That moment... 🥰</h3>
+        <p>A moment I would happily relive.</p>
+      </div>
+      <div class="memory">
+        <img src="photo7.jpg" alt="Favorite memory">
+        <h3>Us. ❤️</h3>
+        <p>That's my favorite part.</p>
+      </div>
+      <div class="memory">
+        <img src="photo8.jpg" alt="Favorite memory">
+        <h3>And hopefully...</h3>
+        <p>Many, many more memories to come. ✨</p>
+      </div>
+    </div>
+
+    <br><br>
+    <h2 style="font-size:2.2rem">But today isn't about looking back...</h2>
+    <p style="font-size:1.4rem"><strong>It's about making another memory. ❤️</strong></p>
+    <br>
+    <a class="btn" href="#date">SHOW ME THE PLAN 👀</a>
+  </div>
+</section>
+
+<section class="page" id="date">
+  <div class="content">
+    <h2>So... I Planned Something For Us. ❤️</h2>
+    <div class="date-card">
+      <div class="date-item"><strong>📅 WHEN</strong> 03rd October</div>
+      <div class="date-item"><strong>⏰ TIME</strong>9:00 PM</div>
+      <div class="date-item"><strong>📍 WHERE</strong>Pune</div>
+      <div class="date-item"><strong>👗 DRESS CODE</strong>Whatever makes you feel beautiful. ❤️</div>
+    </div>
+    <p>And yes... there's a little surprise waiting for you. 😉</p>
+    <br>
+    <img class="final-photo" src="date-photo.jpg" alt="Date surprise">
+    <p><strong>Reservation for two. ❤️</strong></p>
+    <br>
+    <a class="btn" href="#question">ONE LITTLE THING LEFT...</a>
+  </div>
+</section>
+
+<section class="page question" id="question">
+  <div class="content">
+    <div class="eyebrow">The important part</div>
+    <h2>So, Jaan...</h2>
+    <h2>Will you go on a date with me? ❤️</h2>
+    <p class="message">
+      Just you. Just me. One beautiful evening.
+      And hopefully another memory we'll talk about for years. 🥰
+    </p>
+    <div class="buttons">
+      <button class="btn" onclick="sayYes()">YES, OF COURSE! ❤️</button>
+      <button class="btn alt" onclick="maybe()">LET ME THINK... 🤭</button>
+    </div>
+
+    <div id="maybeBox" class="secret hidden">
+      <strong>Hmmmm... 🤔</strong><br><br>
+      I see how it is... 😂<br>
+      You actually made me wait for an answer?<br><br>
+      Okay... I'll give you another chance. ❤️<br><br>
+      <button class="btn" onclick="sayYes()">Okay Okay... YES ❤️</button>
+    </div>
+  </div>
+</section>
+
+<section class="page celebrate hidden" id="yes">
+  <div class="content">
+    <div class="eyebrow">Officially confirmed</div>
+    <h1>YAAAAAAAAAY! 🥳❤️</h1>
+    <h2>It's a date!</h2>
+    <p class="message">
+      I can't wait to spend some time with you.<br>
+      Thank you for saying yes. ❤️<br><br>
+      Now all that's left is for me to see you, steal a few smiles,
+      make some memories... and hopefully make you fall for me all over again. 🥰
+    </p>
+    <img class="final-photo" src="photo9.jpg" alt="Our favorite photo">
+    <p><strong>See you on 3rd October. ❤️</strong></p>
+    <p class="small">P.S. Be ready for the surprise. 😉</p>
+    <br>
+    <button class="btn" onclick="showFinal()">ONE LAST THING... 💍</button>
+  </div>
+</section>
+
+<section class="page hidden" id="final">
+  <div class="content">
+    <h2>One Last Thing...</h2>
+    <div class="message">
+      <p>
+        If you're reading this, you've officially agreed to go on a date with me. ❤️
+      </p>
+      <br>
+      <p>
+        But there's something I didn't put on the invitation...
+      </p>
+      <br>
+      <p style="font-size:1.5rem"><strong>You are my favorite person to make memories with.</strong></p>
+      <br>
+      <p>
+        And I hope this is just one of many dates, adventures, random plans,
+        late-night conversations, laughs and beautiful moments we'll share together.
+      </p>
+      <br>
+      <p style="font-size:1.5rem"><strong>I love you. ❤️</strong></p>
+    </div>
+    <img class="final-photo" src="photo10.jpg" alt="Our special memory">
+    <h2 style="font-size:2.3rem">Our next chapter starts with a date. ❤️</h2>
+    <p>See you soon, Jaan. 🌹</p>
+    <p style="margin-top:25px">— Saurabh ❤️</p>
+  </div>
+</section>
+
+<footer>
+  Made with ❤️
+</footer>
+
+<script>
+  function heartBurst(count=18){
+    for(let i=0;i<count;i++){
+      const h=document.createElement("div");
+      h.className="heart";
+      h.textContent=["❤️","💕","💗","💖","🌹"][Math.floor(Math.random()*5)];
+      h.style.left=(Math.random()*100)+"vw";
+      h.style.fontSize=(16+Math.random()*24)+"px";
+      h.style.animationDuration=(5+Math.random()*4)+"s";
+      document.body.appendChild(h);
+      setTimeout(()=>h.remove(),10000);
+    }
+  }
+
+  function maybe(){
+    document.getElementById("maybeBox").classList.remove("hidden");
+    heartBurst(8);
+  }
+
+  function sayYes(){
+    document.getElementById("yes").classList.remove("hidden");
+    document.getElementById("yes").scrollIntoView({behavior:"smooth"});
+    heartBurst(35);
+  }
+
+  function showFinal(){
+    document.getElementById("final").classList.remove("hidden");
+    document.getElementById("final").scrollIntoView({behavior:"smooth"});
+    heartBurst(25);
+  }
+
+  setInterval(()=>heartBurst(1),3500);
+</script>
+</body>
+</html>
